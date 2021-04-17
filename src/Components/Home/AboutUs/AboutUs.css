@@ -1,0 +1,15 @@
+.btn-warning{
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+  
+    padding:10px 20px;
+}
+
+.btn-yellow:hover{
+}
+
+.about-area{
+    background-color: #F6F5F5;
+    padding: 100px 0;
+}

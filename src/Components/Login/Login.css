@@ -1,0 +1,11 @@
+.signIn-btn{
+   cursor:pointer;
+   display: inline-block;
+   border: 1px solid #ededed;
+   padding: 15px 20px;
+   border-radius: 100px;
+   font-size: 1.5rem;
+   font-weight: 400;
+   font-family: 'Work Sans', sans-serif;
+}
+

@@ -1,0 +1,33 @@
+.pricing.teal .price {
+    background: #16c3b0;
+}
+.pricing.brand .price {
+    background: #FD4D40;
+}
+.pricing .price {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 30px;
+    position: relative;
+}
+.pricing .price:before {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    left: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    content: "";
+}
+.pricing .price>span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 26px;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}

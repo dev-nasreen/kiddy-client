@@ -1,0 +1,18 @@
+.footer-area{
+    background-color: #343A40;
+    padding: 100px 0;
+    color:#fff;
+    padding-bottom: 0;
+}
+.navigation ul{
+    margin: 0;
+    padding: 0;
+}
+.navigation ul li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+.navigation ul li a{
+    text-decoration: none;
+    color:#fff;
+}

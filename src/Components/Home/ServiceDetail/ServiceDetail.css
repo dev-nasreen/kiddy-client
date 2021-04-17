@@ -1,0 +1,16 @@
+.info-danger{
+    background-color: #FD4D40;
+}
+.info-yellow{
+    background-color: #FDB62F;
+}
+.info-teal{
+    background-color: #16C3B0;
+}
+
+.icon h4{
+    font-size: 3rem;
+}
+.info-container{
+    padding: 40px 20px;
+}

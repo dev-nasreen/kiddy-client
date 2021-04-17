@@ -1,0 +1,40 @@
+.welcome-title{
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+    color:#C82333;
+}
+.welcome-text h3{
+    color:#fff; 
+    font-size: 3rem;
+    line-height: 1;
+}
+.super-hero img{
+    float: left;
+}
+.custom-btn{
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    padding:10px 20px;
+}
+.btn-brand{
+   
+    background-color: #FD4D40;
+    border-color: #FD4D40;
+    color:#fff;
+  
+}
+.h-content{
+    height: 500px;
+}
+
+.btn-brand:hover{
+    background-color: #fff;
+    border-color: #C82333;
+    color:#C82333;
+}
+.super-hero {
+    height: 550px;
+    width:100%;
+    transform: translateY(-130px);
+}

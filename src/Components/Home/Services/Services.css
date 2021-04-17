@@ -1,0 +1,28 @@
+.wrap-icon {
+    background-color: #fd4d40;
+}
+
+.wrap-icon {
+    position: relative;
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 80px;
+    display: block;
+    border-radius: 50%;
+    margin-top: -70px;
+    margin-bottom: 30px;
+}
+.wrap-icon>span {
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}

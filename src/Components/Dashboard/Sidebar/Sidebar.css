@@ -1,0 +1,22 @@
+.dashboard{
+    background-color: #B2B2B2;
+    width: 100%;
+    height: 100vh;
+}
+.sidebar{
+    position: fixed;
+}
+.sidebar li{
+    transition:transform 0.5s ease;
+    transform: translate(0);
+}
+.sidebar li a{
+    text-decoration: none;
+}
+.sidebar li:hover span{
+    display: inline-block;
+    transform: translate(5px);
+}
+.sidebar svg{
+    margin-right: 5px;
+}
