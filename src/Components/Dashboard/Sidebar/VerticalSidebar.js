@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaGripHorizontal } from 'react-icons/fa';
 import { FaHome } from 'react-icons/fa';
 import { FaListAlt } from 'react-icons/fa';
@@ -15,6 +15,19 @@ import { UserContext } from '../../../App';
 
 const VerticalSidebar = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [isAdmin, setIsAdmin] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/isAdmin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(response => response.json())
+            .then(data => setIsAdmin(data))
+    }, [loggedInUser.email])
+
+    
     const history = useHistory();
    const handleSignOut =()=>{
     setLoggedInUser({});
@@ -32,14 +45,20 @@ const VerticalSidebar = () => {
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                             <ul className="navbar-nav d-flex flex-column ">
-                                <li className="nav-item">
-                                    <Link className="nav-link active" aria-current="page" to="/dashboard"><FaGripHorizontal /> <span>Dashboard</span></Link>
-                                </li>
+                             
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/"><FaHome /> <span>Home</span></Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/dashboard/orderList"> <FaListAlt/> <span>Order List</span></Link>
+                                    <Link className="nav-link" to="/dashboard/bookingList"><BiShoppingBag/> <span>Booking List</span></Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/dashboard/review">  <MdRateReview/> <span>Review</span></Link>
+                                </li>
+                                {
+                                     isAdmin && <>
+                                <li className="nav-item">
+                                    <Link className="nav-link active" aria-current="page" to="/dashboard"><FaGripHorizontal /> <span>Dashboard</span></Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/dashboard/addServices"><FaPlus/> <span>Add Services</span></Link>
@@ -48,17 +67,16 @@ const VerticalSidebar = () => {
                                     <Link className="nav-link" to="/dashboard/makeAdmin"><ImUserPlus /> <span>Make Admin</span></Link>
                                 </li>
                                 <li className="nav-item">
+                                    <Link className="nav-link" to="/dashboard/adminList"><ImUserPlus /> <span>Admin List</span></Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/dashboard/orderList"><ImUserPlus /> <span>Order List</span></Link>
+                                </li>
+                                <li className="nav-item">
                                     <Link className="nav-link" to="/dashboard/manageServices"><FaCog /> <span>Manage Services</span></Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/dashboard/book"><FiShoppingCart/> <span>Book</span></Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/dashboard/bookingList"><BiShoppingBag/> <span>Booking List</span></Link>
-                                </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link" to="/dashboard/review">  <MdRateReview/> <span>Review</span></Link>
-                                </li>
+                                </>
+                                }
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/"> {
                                         loggedInUser &&  <p style={{cursor:'pointer'}} onClick={handleSignOut}><AiOutlineLogout />Logout </p>

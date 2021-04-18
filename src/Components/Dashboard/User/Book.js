@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from 'react-router';
 import { UserContext } from '../../../App';
-import Sidebar from '../Sidebar/Sidebar';
+import VerticalSidebar from '../Sidebar/VerticalSidebar';
 import ProcessPayment from './ProcessPayment'
 
 const Book = () => {
@@ -18,11 +18,12 @@ const Book = () => {
     };
     const handlePaymentSuccess = paymentId =>{
         const shippingDetails ={ 
+            ...service,
             ...loggedInUser,
-            package: _id, 
             shipment: shippingData, 
             orderTime: new Date(),
-            paymentId
+            paymentId,
+            status: 'pending'
         }
         fetch('http://localhost:5000/addOrder',{
             method: 'POST',
@@ -52,31 +53,47 @@ const Book = () => {
         <section style={{ backgroundColor: '#ededed', height: 'auto', padding:'50px 0' }}>
             <div className="container">
                 <div className="row">
-                    <Sidebar></Sidebar>
+                    <VerticalSidebar></VerticalSidebar>
                     <div className="col-md-8 mTop">
                         <div className="service-form ">
-                            <h5 className="text-brand">Please Confirm Order By giving the following information.</h5>
+                            <h5 className="text-brand mb-5">Please Confirm Order By giving the following information.</h5>
                             <div style={{display: shippingData ? 'none':'block' }}>
                             <form onSubmit={handleSubmit(onSubmit)}>
-                                <div className="mb-3">
-                                    <input type="text" name="name" class="form-control" defaultValue={service.serviceName} {...register("name", { required: true })} />
-                                    {errors.name && <span>This field is required</span>}
+                            <div className="mb-3 form-group">
+                                <div className="row">
+                                    <div className="col-md-4">
+                                    <label htmlFor="exampleFormControlInput1" class="form-label m-0 mb-0">Service Name</label>
+                                    <input type="text" name="name" class="form-control" id="exampleFormControlInput1" defaultValue={service.serviceName}  />
+                                    </div>
+                                    <div className="col-md-4">
+                                    <label htmlFor="name" class="form-label m-0 mb-0">Price</label>
+                                    <input type="text" name="price" class="form-control" defaultValue={service.price}  />
+                                    </div>
                                 </div>
-                                <div className="mb-3">
-                                    <input type="text" name="user" class="form-control" defaultValue={loggedInUser.name} {...register("user", { required: true })} />
+                                </div>
+                                <div className="mb-3 form-group">
+                                    <label htmlFor="user" class="form-label m-0 mb-0">User Name</label>
+                                    <input type="text" name="user" class="form-control" defaultValue={loggedInUser.name}  />
                                     {errors.user && <span>This field is required</span>}
                                 </div>
-                                <div className="mb-3">
-                                    <input type="email" name="email" class="form-control" defaultValue={loggedInUser.email} {...register("email", { required: true })} />
+                                <div className="mb-3 form-group" >
+                                <label htmlFor="email" class="form-label m-0 mb-0">Email</label>
+                                    <input type="email" name="email" class="form-control" defaultValue={loggedInUser.email} />
                                     {errors.email && <span>This field is required</span>}
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-3 form-group">
+                                    <label htmlFor="address" class="form-label m-0 mb-0">Address</label>
                                     <input type="text-area" name="address" class="form-control" placeholder="address" {...register("address", { required: true })} />
                                     {errors.address && <span>This field is required</span>}
                                 </div>
-                                <input name="phone" {...register("phone", { required: true })} placeholder="Your phone no."/>
+                                <div className="mb-3 form-group">
+                                <label htmlFor="phone" class="form-label m-0" style={{marginBottom:'0'}}>Phone No.</label>
+                                <input name="phone" type="number" class="form-control" {...register("phone", { required: true })} placeholder="Your phone no."/>
                                 {errors.phone && <span className="error">This phone No. is required</span>}
-                                <input type="submit" />
+                                </div>
+                                <div className="mb-3 form-group">
+                                <input type="submit" class="form-control btn btn-brand" />
+                                </div>
                             </form>
                             </div>
                             <div style={{display: shippingData ? 'block':'none' }}>

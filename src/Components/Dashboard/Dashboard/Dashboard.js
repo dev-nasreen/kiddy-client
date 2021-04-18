@@ -4,8 +4,6 @@ import VerticalSidebar from '../Sidebar/VerticalSidebar';
 //import Sidebar from '../Sidebar/Sidebar';
 
 const Dashboard = () => { 
-     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-const onSubmit = data => console.log(data);
 return (
     <section style={{ backgroundColor: '#ededed', padding:'100px 0' }}>
         <div className="container">

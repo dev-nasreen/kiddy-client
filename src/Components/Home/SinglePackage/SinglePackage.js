@@ -13,7 +13,7 @@ const SinglePackage = ({detail}) => {
                 <div className="card-body">
                     <h5 className="card-title" style={{color:'#6DD0D0'}}>{detail.serviceName}</h5>
                     <p className="card-text text-secondary">{detail.description}</p>
-                    <div className="d-flex justify-content-between"><p><strong>Price: ${detail.price}</strong></p> <p><Link  to={"/book/"+ _id} className={`btn btn-warning custom-btn`}>Buy now</Link></p></div>
+                    <div className="d-flex justify-content-between"><p><strong>Price: ${detail.price}</strong></p> <p><Link  to={"/dashboard/book/"+ _id} className={`btn btn-warning custom-btn`}>Buy now</Link></p></div>
                     
                 </div>
                 </div>

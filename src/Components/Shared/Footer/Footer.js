@@ -16,10 +16,8 @@ const Footer = () => {
                         </div>
                         <div className="f-newsletter">
                         <h5 style={{color:'#FD4D40'}}>Newsletter</h5>
-                        <div class="input-group mt-3">
-                            <input type="text" class="form-control" placeholder="Email"  />
-                            <span class="input-group-text btn btn-danger" id="basic-addon2">Send</span>
-                            </div>
+                        <input name="newsletter"  placeholder="Newsletter"/>
+                        <button className="btn btn-brand custom-btn">Send</button>
                         </div>
                     </div>
                     <div className="col-md-3 offset-md-2">
