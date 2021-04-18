@@ -11,7 +11,7 @@ const MakeAdmin = () => {
           email: data.email
         }
 
-        fetch('http://localhost:5000/addAdmin', {
+        fetch('https://whispering-caverns-93848.herokuapp.com/addAdmin', {
           method: "POST",
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(email)

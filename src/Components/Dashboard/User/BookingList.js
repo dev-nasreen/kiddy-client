@@ -7,12 +7,12 @@ const BookingList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [orders, setOrders] = useState([]);
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/orders?email=${loggedInUser.email}`)
+    //     fetch(`https://whispering-caverns-93848.herokuapp.com/orders?email=${loggedInUser.email}`)
     //         .then(res => res.json())
     //         .then(data => setOrders(data))
     // }, [loggedInUser.email]);
     useEffect(() => {
-        fetch('http://localhost:5000/orders/' + loggedInUser.email)
+        fetch('https://whispering-caverns-93848.herokuapp.com/orders/' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [loggedInUser.email]);

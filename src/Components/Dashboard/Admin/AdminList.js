@@ -5,7 +5,7 @@ const AdminList = () => {
 
 const [admins, setAdmins] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/adminList`)
+        fetch(`https://whispering-caverns-93848.herokuapp.com/adminList`)
             .then(res => res.json())
             .then(data => setAdmins(data))
     }, [])

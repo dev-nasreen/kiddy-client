@@ -25,7 +25,7 @@ const Book = () => {
             paymentId,
             status: 'pending'
         }
-        fetch('http://localhost:5000/addOrder',{
+        fetch('https://whispering-caverns-93848.herokuapp.com/addOrder',{
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ const Book = () => {
         }
         
         useEffect(() => {
-            fetch(`http://localhost:5000/singleService/${_id}`)
+            fetch(`https://whispering-caverns-93848.herokuapp.com/singleService/${_id}`)
                 .then(res => res.json())
                 .then(data => setService(data[0]))
         }, [_id])

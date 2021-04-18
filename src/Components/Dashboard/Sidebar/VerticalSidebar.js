@@ -18,7 +18,7 @@ const VerticalSidebar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/isAdmin', {
+        fetch('https://whispering-caverns-93848.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -27,7 +27,7 @@ const VerticalSidebar = () => {
             .then(data => setIsAdmin(data))
     }, [loggedInUser.email])
 
-    
+
     const history = useHistory();
    const handleSignOut =()=>{
     setLoggedInUser({});

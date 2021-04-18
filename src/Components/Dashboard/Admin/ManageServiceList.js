@@ -6,7 +6,7 @@ const ManageServiceList = ({service}) => {
     const {serviceName, price, _id} = service;
     const [deleteSuccess, setDeleteSuccess] = useState(false);
     const handleDeleteProduct = (id, event) => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://whispering-caverns-93848.herokuapp.com/delete/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

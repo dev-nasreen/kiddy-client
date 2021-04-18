@@ -15,7 +15,7 @@ const Review = () => {
             review: data.description,
             ...loggedInUser
         }
-        fetch('http://localhost:5000/addReview', {
+        fetch('https://whispering-caverns-93848.herokuapp.com/addReview', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(reviewData)

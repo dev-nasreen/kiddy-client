@@ -7,7 +7,7 @@ const ManageServices = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/availableServices`)
+        fetch(`https://whispering-caverns-93848.herokuapp.com/availableServices`)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

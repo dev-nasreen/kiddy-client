@@ -10,7 +10,7 @@ const OrderList = () => {
 
     
     useEffect(()=> {
-        fetch(`http://localhost:5000/orders/?email=${loggedInUser.email}`)
+        fetch(`https://whispering-caverns-93848.herokuapp.com/orders/?email=${loggedInUser.email}`)
         .then(res => res.json())
         .then(data => setOrders(data))
     }, [loggedInUser.email])
@@ -23,7 +23,7 @@ console.log(orders);
         const status = document.getElementById("status").value;
         const updateInfo = { id, status };
         console.log(updateInfo);
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://whispering-caverns-93848.herokuapp.com/updateStatus`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(updateInfo)

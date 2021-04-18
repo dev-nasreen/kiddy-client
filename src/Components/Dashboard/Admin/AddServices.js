@@ -15,7 +15,7 @@ const AddServices = () => {
             imageUrl: imageUrl
         }
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://whispering-caverns-93848.herokuapp.com/addService', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(serviceData)
