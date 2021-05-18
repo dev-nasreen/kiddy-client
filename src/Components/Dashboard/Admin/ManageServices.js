@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { UserContext } from '../../../App';
 import VerticalSidebar from '../Sidebar/VerticalSidebar';
 import ManageServiceList from './ManageServiceList';
 
 const ManageServices = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const {manageServices} = useParams();
     const [services, setServices] = useState([]);
     useEffect(() => {
         fetch(`https://whispering-caverns-93848.herokuapp.com/availableServices`)
@@ -12,11 +13,10 @@ const ManageServices = () => {
             .then(data => setServices(data))
     }, [])
     return (
-        <section style={{ backgroundColor: '#ededed', padding: '100px 0' }}>
-            <div className="container">
-                <div className="row">
-                    <VerticalSidebar></VerticalSidebar>
-                    <div className="col-md-8 mTop">
+        <>
+        <h2>{manageServices}</h2>
+
+      
                     <table className="table">
                         <thead>
                             <tr>
@@ -32,10 +32,8 @@ const ManageServices = () => {
                             }
                         </tbody>
                     </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+        
+         </>          
     );
 };
 

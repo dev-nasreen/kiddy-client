@@ -127,7 +127,7 @@ const SplitForm = ({handlePayment}) => {
         />
       </label>
       <br/>
-      <button type="submit" disabled={!stripe}>
+      <button className=" btn btn-warning custom-btn"type="submit" disabled={!stripe}>
         Pay
       </button>
     </form>

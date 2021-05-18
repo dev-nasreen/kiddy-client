@@ -45,16 +45,12 @@ const Book = () => {
         useEffect(() => {
             fetch(`https://whispering-caverns-93848.herokuapp.com/singleService/${_id}`)
                 .then(res => res.json())
-                .then(data => setService(data[0]))
+                .then(data => setService(...data))
         }, [_id])
        
  
     return (
-        <section style={{ backgroundColor: '#ededed', height: 'auto', padding:'50px 0' }}>
-            <div className="container">
-                <div className="row">
-                    <VerticalSidebar></VerticalSidebar>
-                    <div className="col-md-8 mTop">
+       
                         <div className="service-form ">
                             <h5 className="text-brand mb-5">Please Confirm Order By giving the following information.</h5>
                             <div style={{display: shippingData ? 'none':'block' }}>
@@ -100,10 +96,7 @@ const Book = () => {
                             <ProcessPayment handlePayment={handlePaymentSuccess}></ProcessPayment>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+              
     );
 };
 

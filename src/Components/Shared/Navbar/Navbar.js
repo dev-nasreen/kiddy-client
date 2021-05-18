@@ -40,8 +40,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div>
-                        <p style={{cursor:'pointer'}}> {
-                            (loggedInUser.email || sessionStorage.getItem('token')) ? loggedInUser.name :  <Link className="nav-link" to="/login">Login</Link>
+                        <p className="login-btn nav-item"> {
+                            loggedInUser.email ?<span className="nav-link">{loggedInUser.name}</span>  :  <Link className="nav-link" to="/login">Login</Link>
                             } </p>
                         
                     </div>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import VerticalSidebar from '../Sidebar/VerticalSidebar';
 
 const AdminList = () => {
-
+const {adminList} = useParams();
 const [admins, setAdmins] = useState([]);
     useEffect(() => {
         fetch(`https://whispering-caverns-93848.herokuapp.com/adminList`)
@@ -10,11 +11,8 @@ const [admins, setAdmins] = useState([]);
             .then(data => setAdmins(data))
     }, [])
     return (
-        <section style={{ backgroundColor: '#ededed', padding: '100px 0' }}>
-            <div className="container">
-                <div className="row">
-                    <VerticalSidebar></VerticalSidebar>
-                    <div className="col-md-8 mTop">
+        <>
+       
                         <table className="table">
                             <thead>
                                 <tr>
@@ -33,10 +31,7 @@ const [admins, setAdmins] = useState([]);
                                
                             </tbody>
                         </table>
-                    </div>
-                </div>
-            </div>
-        </section>
+                   </>
     );
 };
 

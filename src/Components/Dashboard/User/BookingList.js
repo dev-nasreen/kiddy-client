@@ -6,18 +6,14 @@ import SingleBook from './SingleBook';
 const BookingList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [orders, setOrders] = useState([]);
-    // useEffect(() => {
-    //     fetch(`https://whispering-caverns-93848.herokuapp.com/orders?email=${loggedInUser.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setOrders(data))
-    // }, [loggedInUser.email]);
     useEffect(() => {
-        fetch('https://whispering-caverns-93848.herokuapp.com/orders/' + loggedInUser.email)
+        fetch(`https://whispering-caverns-93848.herokuapp.com/orders?email=${loggedInUser.email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [loggedInUser.email]);
-
    
+
+   console.log(orders)
     return (
         <section style={{ backgroundColor: '#ededed', padding: '100px 0' }}>
             <div className="container">

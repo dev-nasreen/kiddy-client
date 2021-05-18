@@ -38,3 +38,10 @@
     width:100%;
     transform: translateY(-130px);
 }
+
+
+@media screen and (max-width: 425px){
+    .welcome-text h3{
+        font-size: 2rem;
+    }
+}

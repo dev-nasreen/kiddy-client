@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import { UserContext } from '../../../App';
 import VerticalSidebar from '../Sidebar/VerticalSidebar';
 
 const Review = () => {
+    const {reviews} = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [review, setReview] =useState({});
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -33,11 +34,7 @@ const Review = () => {
     }
         console.log(loggedInUser.img);
     return (
-        <section style={{ backgroundColor: '#ededed', padding: '100px 0' }}>
-            <div className="container">
-                <div className="row">
-                    <VerticalSidebar></VerticalSidebar>
-                    <div className="col-md-8 mTop">
+        <>
                         <h5 className="text-brand">Add a Review</h5>
                         <div className="form-area" >
                             <form onSubmit={handleSubmit(onSubmit)}>
@@ -58,10 +55,8 @@ const Review = () => {
                                 <button className="btn btn-warning">Submit</button>
                             </form>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        </>
+                   
     );
 };
 

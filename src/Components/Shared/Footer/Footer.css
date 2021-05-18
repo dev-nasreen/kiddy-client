@@ -21,3 +21,19 @@
     background-color: #FD4D40;
     padding: 20px 40px;
 }
+
+@media screen and (max-width: 425px){
+    .f-newsletter input{
+        width:90%;
+    }
+
+    .f-newsletter{
+        margin-bottom: 20px;
+    }
+    .ms-auto {
+        margin-left: 0!important;
+    }
+    .menu-wrap {
+        border-radius: 0;
+    }
+}

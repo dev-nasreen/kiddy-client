@@ -27,21 +27,14 @@ const Login = () => {
     const {displayName, email, photoURL} =  result.user;
     const signedInUser = {name:displayName, email, img: photoURL }
     setLoggedInUser(signedInUser);
-    storeAuthToken();
+       history.replace(from);
   }).catch((error) => {
     const errorMessage = error.message;
     console.log(errorMessage)
   });
   }
   
-  const storeAuthToken = () =>{
-    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true).then(function(idToken) {
-       sessionStorage.setItem('token', idToken );
-       history.replace(from);
-      }).catch(function(error) {
-        console.log(error);
-      });
-  }
+  
   return (
         <div className="container">
             <div className="row mTop">
