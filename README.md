@@ -19,9 +19,9 @@ It is a fully dynamic website. You can buy our services and also can give review
 * Heroku, Stripe API (temporarily creating dummy payment gateway)
 * Firebase hosting and Mongodb used for databases.
 
-#### Services Card to buy service:
-![kiddy](https://i.ibb.co/ry2wyRM/package.png "Kiddy")
+
 #### Admin Dashboard to manage services:
+<img src="images/addService.PNG" >
 ![kiddy](https://i.ibb.co/89s8rKY/admin-manage-product.png"Kiddy")
 #### Admin Dashboard to add new services:
 ![kiddy](https://i.ibb.co/wsHqy59/Admin-dashboard.png"Kiddy")
