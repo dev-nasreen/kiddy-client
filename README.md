@@ -20,7 +20,8 @@ It is a fully dynamic website. You can buy our services and also can give review
 * Firebase hosting and Mongodb used for databases.
 
 #### Services Card to buy service:
-![kiddy](https://i.ibb.co/ry2wyRM/package.png "Kiddy")
+
+![](images/addService.PNG)
 #### Admin Dashboard to manage services:
 ![kiddy](https://i.ibb.co/89s8rKY/admin-manage-product.png"Kiddy")
 #### Admin Dashboard to add new services:
